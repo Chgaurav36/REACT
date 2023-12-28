@@ -6,9 +6,10 @@ const page = () => {
   const [desc, setdesc] = useState("");
   const [mainTask, setmainTask] = useState([]);
 
-  const submitHandler = (ele) => {
-    ele.preventDefault();
+  const submitHandler = (e) => {
+    e.preventDefault();
     setmainTask([...mainTask, { title, desc }]);
+    console.log(mainTask);
     settitle("");
     setdesc("");
   };
