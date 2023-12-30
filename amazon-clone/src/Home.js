@@ -12,17 +12,32 @@ const Home = () => {
           alt=""
         />
         <div className="home_row">
-            <Product/>
+          <Product 
+          title = 'The Gift Box'
+          price={300}
+          image = "https://images-na.ssl-images-amazon.com/images/W/MEDIAX_792452-T2/images/G/01/AmazonExports/Events/2023/EBF23/Fuji_Desktop_Single_image_EBF_2x_v3._SY608_CB573698005_.jpg"
+          rating = {5}
+
+          />
+          <Product/>
          </div>
 
         <div className="home_row">
-            {/* Product */}
-            {/* Product */}
-             {/* Product */}
+          <Product/>
+          <Product/>
+          <Product/>
         </div>
 
         <div className="home_row">
-            {/* Product */}
+        <Product 
+        
+          title = 'The Gift Box'
+          price={300}
+          image = "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/71qkzkC7bHL._AC_SX679_.jpg"
+          rating = {5}
+
+          />
+         
         </div>
       </div>
     </div>
