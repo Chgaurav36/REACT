@@ -1,6 +1,6 @@
 import React from "react";
-import "./Home.css"
-import Product from "./Product"
+import "./Home.css";
+import Product from "./Product";
 
 const Home = () => {
   return (
@@ -17,15 +17,35 @@ const Home = () => {
           price={300}
           image = "https://images-na.ssl-images-amazon.com/images/W/MEDIAX_792452-T2/images/G/01/AmazonExports/Events/2023/EBF23/Fuji_Desktop_Single_image_EBF_2x_v3._SY608_CB573698005_.jpg"
           rating = {5}
-
           />
-          <Product/>
+          <Product 
+          title = 'The Gift Box'
+          price={300}
+          image = "https://images-na.ssl-images-amazon.com/images/W/MEDIAX_792452-T2/images/G/01/AmazonExports/Events/2023/EBF23/Fuji_Desktop_Single_image_EBF_2x_v3._SY608_CB573698005_.jpg"
+          rating = {5}
+          />
          </div>
 
         <div className="home_row">
-          <Product/>
-          <Product/>
-          <Product/>
+        <Product 
+          title = 'The Gift Box'
+          price={300}
+          image = "https://images-na.ssl-images-amazon.com/images/W/MEDIAX_792452-T2/images/G/01/AmazonExports/Events/2023/EBF23/Fuji_Desktop_Single_image_EBF_2x_v3._SY608_CB573698005_.jpg"
+          rating = {5}
+          />
+          <Product 
+          title = 'The Gift Box'
+          price={300}
+          image = "https://images-na.ssl-images-amazon.com/images/W/MEDIAX_792452-T2/images/G/01/AmazonExports/Events/2023/EBF23/Fuji_Desktop_Single_image_EBF_2x_v3._SY608_CB573698005_.jpg"
+          rating = {5}
+          />
+          <Product 
+          title = 'The Gift Box'
+          price={300}
+          image = "https://images-na.ssl-images-amazon.com/images/W/MEDIAX_792452-T2/images/G/01/AmazonExports/Events/2023/EBF23/Fuji_Desktop_Single_image_EBF_2x_v3._SY608_CB573698005_.jpg"
+          rating = {5}
+          />
+          
         </div>
 
         <div className="home_row">
