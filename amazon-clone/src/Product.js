@@ -1,24 +1,10 @@
-
+import React from "react";
 import "./Product.css";
-// import { useStateValue } from "./stateProvider";
+import {useCartContext} from './StateContext'
 
 const Product = ({id, title, image, price, rating}) => {
-  // const [{basket}, dispatch] = useStateValue();
-  //   console.log("Items in the basket" + basket);
-  //   const addToBasket = () =>{
-  //     //dispatch item to data layer
-  //     dispatch({
-  //       type: 'ADD_TO_BASKET',
-  //       item: {
-  //         id: id,
-  //         title: title,
-  //         image: image,
-  //         price: price,
-  //         rating:rating
-
-  //       },
-  //     });
-  //   }
+  const {addToCart} = useCartContext();
+  
   return (
     <div className="product">
       <div className="product_info">
@@ -38,7 +24,7 @@ const Product = ({id, title, image, price, rating}) => {
         src={image}
         alt=""
       />
-      <button  >Add to basket</button>
+      <button onClick={()=>addToCart(id, title,image,price,rating)} >Add to basket</button>
     </div>
   );
 };
