@@ -4,15 +4,15 @@ import reducer from "./reducer";
 const StateContext = createContext();
 
 const initialState= {
-    cart: [],
-    total_item: "",
-    total_amount:"",
-    shipping_fee: 50000
+    basket: [],
+    total_quantity: ""
+    
 };
 
 const  StateProvider = ({  children }) =>{
 
     const [state, dispatch] = useReducer(reducer,initialState)
+    
 
    const addToCart = (id, title,image,price,rating) =>{
     dispatch({type:"ADD_TO_CART", payload:{id, title,image,price,rating}})
@@ -20,8 +20,8 @@ const  StateProvider = ({  children }) =>{
    };
     
     return <StateContext.Provider value = {{...state,addToCart}}>
-        {children}
-    </StateContext.Provider>
+                {children}
+            </StateContext.Provider>
 
 }
 
@@ -30,4 +30,4 @@ const useCartContext = () =>{
 }
 
 
-export {StateProvider,useCartContext };
+export {StateProvider, useCartContext };

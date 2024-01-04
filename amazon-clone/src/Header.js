@@ -3,16 +3,19 @@ import "./Header.css";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import { Link } from "react-router-dom"
+// import { useCartContext } from "./StateContext";
+
 const Header = () => {
+  // const {basket} = useCartContext();
   return (
+   
     <div className="header">
     <Link to="/">
-    <img
-        className="header_logo"
-        src="https://www.nicepng.com/png/full/16-167642_amazon-logo-amazon-logo-white-text.png"
-        alt=""
-      />
-
+      <img
+          className="header_logo"
+          src="https://www.nicepng.com/png/full/16-167642_amazon-logo-amazon-logo-white-text.png"
+          alt=""
+        />
     </Link>
      
       <div className="header_search">
@@ -37,7 +40,7 @@ const Header = () => {
         <Link to="/checkout">
         <div className="header_optionBasket">
           <ShoppingBasketIcon />
-          <span className="header_optionlineTwo header_BasketCount">0</span>
+          <span className="header_optionlineTwo header_BasketCount">{0}</span>
         </div>
 
         </Link>

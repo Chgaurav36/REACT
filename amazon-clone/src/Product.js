@@ -2,8 +2,10 @@ import React from "react";
 import "./Product.css";
 import {useCartContext} from './StateContext'
 
+
 const Product = ({id, title, image, price, rating}) => {
   const {addToCart} = useCartContext();
+  console.log(addToCart);
   
   return (
     <div className="product">
