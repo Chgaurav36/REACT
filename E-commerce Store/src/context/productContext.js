@@ -12,6 +12,8 @@ const initialState = {
     isError: false,
     products: [],
     featureProducts: [],
+    isSingleLoading: false,
+    singleProduct: {}, //Here it is not a array it is object
 }
 
 
@@ -30,9 +32,22 @@ const AppProvider = ({children}) =>{
             const products = await response.data;
             //yaha pe dispatch kaam pe lagwa raha hai aur wo kaam karne ke liye kya kya data chahiye wo hum perenthesis me pass karenge
             // yaha pe payload hold karta hai konsa data :Reference to above line
-            dispatch({ type: "SET_API_DATA", payload: products })
+            dispatch({ type: "SET_API_DATA", payload: products });
         } catch (error) {
             dispatch({type: "API_ERROR"});
+        }
+    };
+
+    // API call for single product
+
+    const getSingleProduct = async (url) =>{
+        dispatch({type: "SET_SINGLE_LOADING"});
+        try {
+            const response = await axios.get(url);
+            const singleProduct = await response.data;
+            dispatch({ type: "SET_SINGLE_PRODUCT", payload: singleProduct })
+        } catch (error) {
+            dispatch({type: "SET_SINGLE_ERROR"});
         }
     }
     
@@ -40,7 +55,7 @@ const AppProvider = ({children}) =>{
     useEffect( () => {
      getProducts(API);
     }, []);
-    return <AppContext.Provider value={{...state}}>{children}</AppContext.Provider>
+    return <AppContext.Provider value={{...state, getSingleProduct}}>{children}</AppContext.Provider>
 };
 
 //Custom hook
