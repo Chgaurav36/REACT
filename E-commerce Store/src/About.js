@@ -12,7 +12,7 @@ const About = () => {
     name: "Shop Now"
   }
   return <>
-  {myName}
+  
   <HeroSection mydata = {data}/>
   
   </>

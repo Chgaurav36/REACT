@@ -180,7 +180,7 @@ const Nav = () => {
                 </NavLink>
             </li>
             <li>
-                <NavLink to="/product" className="navbar-link home-link"
+                <NavLink to="/products" className="navbar-link home-link"
                 onClick={() => setMenuIcon(false)}>
                 Products
                 </NavLink>

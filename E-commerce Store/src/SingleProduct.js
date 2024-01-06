@@ -9,6 +9,7 @@ import FormatPrice from "./helper/FormatPrice";
 import { MdSecurity } from "react-icons/md";
 import { TbTruckDelivery, TbReplace } from "react-icons/tb";
 import Star from "./components/Star";
+import AddToCart from "./components/AddToCart";
 
 
 
@@ -87,7 +88,7 @@ const SingleProduct= () =>{
               </p>
             </div>
             <hr />
-            
+            {stock > 0 && <AddToCart product={singleProduct}/>}
         </div>
       </div>
     </Container>
