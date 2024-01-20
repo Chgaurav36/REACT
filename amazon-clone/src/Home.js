@@ -13,14 +13,14 @@ const Home = () => {
         />
         <div className="home_row">
           <Product 
-          id={1}
+          id="1111"
           title = 'The Gift Box'
           price={300}
           image = "https://images-na.ssl-images-amazon.com/images/W/MEDIAX_792452-T2/images/G/01/AmazonExports/Events/2023/EBF23/Fuji_Desktop_Single_image_EBF_2x_v3._SY608_CB573698005_.jpg"
           rating = {5}
           />
           <Product 
-          id={2}
+          id="2222"
           title = 'The Gift Box'
           price={300}
           image = "https://images-na.ssl-images-amazon.com/images/W/MEDIAX_792452-T2/images/G/01/AmazonExports/Events/2023/EBF23/Fuji_Desktop_Single_image_EBF_2x_v3._SY608_CB573698005_.jpg"
@@ -30,25 +30,25 @@ const Home = () => {
 
         <div className="home_row">
         <Product 
-          id={3}
+          id="3333"
           title = 'The Gift Box'
           price={300}
           image = "https://images-na.ssl-images-amazon.com/images/W/MEDIAX_792452-T2/images/G/01/AmazonExports/Events/2023/EBF23/Fuji_Desktop_Single_image_EBF_2x_v3._SY608_CB573698005_.jpg"
-          rating = {5}
+          rating = {2}
           />
           <Product
-          id={4} 
+          id="4444" 
           title = 'The Gift Box'
           price={300}
           image = "https://images-na.ssl-images-amazon.com/images/W/MEDIAX_792452-T2/images/G/01/AmazonExports/Events/2023/EBF23/Fuji_Desktop_Single_image_EBF_2x_v3._SY608_CB573698005_.jpg"
-          rating = {5}
+          rating = {3}
           />
           <Product
-          id={5} 
+          id="5555"
           title = 'The Gift Box'
           price={300}
           image = "https://images-na.ssl-images-amazon.com/images/W/MEDIAX_792452-T2/images/G/01/AmazonExports/Events/2023/EBF23/Fuji_Desktop_Single_image_EBF_2x_v3._SY608_CB573698005_.jpg"
-          rating = {5}
+          rating = {4}
           />
           
         </div>

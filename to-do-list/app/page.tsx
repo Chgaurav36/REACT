@@ -45,9 +45,9 @@ const page = () => {
 
   return (
     <>
-      <h1 className=" bg-cyan-400  text-white p-4 font-bold text-center">
-        Gaurav To-Do List
-      </h1>
+      <h1 className="absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%] text-[15vw] font-semibold text-zinc-500 leading-none tracking-tight ">
+          TO DO.
+        </h1>
       <div className="container ">
         <form
           className="flex flex-col ... place-items-center m-2"

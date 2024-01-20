@@ -1,11 +1,30 @@
 import React from "react";
 import "./Product.css";
-import {useCartContext} from './StateContext'
+import {useCartContext} from "../src/context/StateContext";
+
 
 
 const Product = ({id, title, image, price, rating}) => {
-  const {addToCart} = useCartContext();
-  console.log(addToCart);
+  const [{basket}, dispatch] = useCartContext();
+  console.log(basket);
+
+  const addToCart= () => {
+     //dispatch the item in the data layer
+     dispatch({
+      type: "ADD_TO_CART",
+      item: {
+       id: id,
+       title: title,
+       image: image,
+       price: price,
+       rating: rating
+      }
+ 
+     })
+      
+     
+    
+  }
   
   return (
     <div className="product">
@@ -29,6 +48,6 @@ const Product = ({id, title, image, price, rating}) => {
       <button onClick={()=>addToCart(id, title,image,price,rating)} >Add to basket</button>
     </div>
   );
-};
+}
 
 export default Product;
