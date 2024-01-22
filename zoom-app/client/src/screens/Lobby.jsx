@@ -1,6 +1,7 @@
-import React, { useCallback } from 'react'
-import { useState } from 'react';
+import React, { useState, useCallback, useEffect } from 'react'
 import styled from "styled-components";
+import { useNavigate } from 'react-router-dom';
+import { useSocket } from '../context/SocketProvider'
 
 const Lobby = () => {
   const [email, setEmail] = useState('');
@@ -14,13 +15,29 @@ const Lobby = () => {
     setroom(e.target.value);
   };
 
+  const socket  = useSocket();
+  // console.log(socket);
+
+  const navigate  = useNavigate();
+
   const handleSubmitForm = useCallback((e) => {
     e.preventDefault();
-    console.log({
-      email,
-      room,
-    });
-  }, [email, room]);
+    socket.emit("room:join", {email, room})
+    
+    },[email, room, socket]);
+
+    
+    const handleJoinRoom = useCallback((data) =>{
+      const { email, room  }  = data;
+      navigate(`/room/${room}`)
+    }, [navigate])
+
+    useEffect(()=>{
+      socket.on('room:join', handleJoinRoom);
+      return () =>{
+        socket.off('room:join', handleJoinRoom)
+      }
+    }, [socket, handleJoinRoom]);
   
   return (
   <Wrapper>
@@ -34,7 +51,7 @@ const Lobby = () => {
               type="email"
               value={email}
               onChange={handleEmailChange}
-              placeholder="Enter your email"
+              placeholder="Enter your Email"
             />
           </div>
           <div className="form-group">
@@ -88,6 +105,7 @@ label {
 }
 
 input {
+  margin-left: -10px;
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
